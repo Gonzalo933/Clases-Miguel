@@ -23,7 +23,7 @@ double Elevar(double base, int exponente){
 void main(int argc, char* argv[]){
 
 printf("Elevar 10^3: %.3f\n", Elevar(10.0 , 3));
-printf("Elevar 2^-2: %.3f", Elevar(2.0 , -2));
+printf("Elevar 2^-2: %.3f\n", Elevar(2.0 , -2));
 
-return 0;
+return;
 }

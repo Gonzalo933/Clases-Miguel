@@ -12,9 +12,11 @@ int altura;
 printf("Introduce la altura del triangulo: \n");
 scanf("%d",&altura);
 
-printf("Triangulo:\n", DibujarTriangulo(altura));
+printf("Triangulo:\n");
 
-return 0;
+DibujarTriangulo(altura);
+
+return;
 }
 
 void DibujarTriangulo(int altura){

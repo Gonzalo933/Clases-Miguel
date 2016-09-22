@@ -10,7 +10,7 @@ void main(int argc, char* argv[])
 float x= 10;
 float y = 20;
 
-printf("Media (10 y 20): %.3f", Average(x,y));
+printf("Media (10 y 20): %.3f\n", Average(x,y));
 
-return 0;
+return;
 }

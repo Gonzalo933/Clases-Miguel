@@ -39,5 +39,5 @@ scanf("%d",&n);
 
 printf("Valor de la Serie: %.3f\n", CalcularSerie(n));
 
-return 0;
+return;
 }

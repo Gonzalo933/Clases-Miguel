@@ -22,14 +22,15 @@ double Elevar(double base, int exponente){
 
 
 
-double CalcularSerie(int epsilon){
-int exponente;
+double CalcularSerie(double epsilon){
+int exponente=1;
 double suma=0.0;
 double ultimo_termino;
 
 //Mientras el ultimo termino calculado sea mayor que el epsilon, seguir calculando
 	do{
 		ultimo_termino = exponente / Elevar(2.0,exponente);		
+		//printf("Terminos: %f \n",ultimo_termino);
 		suma = suma + ultimo_termino;
 		exponente ++;
 	}while(ultimo_termino > epsilon);
@@ -40,12 +41,14 @@ double ultimo_termino;
 
 void main(int argc, char* argv[]){
 
-int epsilon;
+double epsilon;
 
 printf("Introduce Epsilon: \n");
-scanf("%d",&epsilon);
 
-printf("Valor de la Serie: %.3f\n", CalcularSerie(epsilon));
+// %lf para leer doubles
+scanf("%lf",&epsilon);
 
-return 0;
+printf("Valor de la Serie: %f\n", CalcularSerie(epsilon));
+
+return;
 }

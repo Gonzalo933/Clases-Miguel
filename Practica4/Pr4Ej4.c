@@ -33,8 +33,8 @@ double ultimo_termino;
 		//printf("Terminos: %f \n",ultimo_termino);
 		suma = suma + ultimo_termino;
 		exponente ++;
-	}while(ultimo_termino > epsilon);
-
+	}while(ultimo_termino >= epsilon);
+//	suma = suma - ultimo_termino;
 	return  suma;
 }
 

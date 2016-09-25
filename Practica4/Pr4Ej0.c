@@ -3,8 +3,13 @@
 
 
 float Average(int x1, int x2){
+
 	return (x1+x2)/2;
+	
 }
+
+
+
 void main(int argc, char* argv[])
 {
 float x= 10;

@@ -20,6 +20,8 @@ double Elevar(double base, int exponente){
 	//En caso de que exponente == 0 devuelve resultado que es = 1
 	return resultado;
 }
+
+
 void main(int argc, char* argv[]){
 
 printf("Elevar 10^3: %.3f\n", Elevar(10.0 , 3));

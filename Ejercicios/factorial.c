@@ -12,7 +12,7 @@ void main(int argc, char* argv[]){
 	scanf("%d",&numero);	
 	
 	
-	pritnf("El factorial de %d es %d\n",numero,factorial(numero));
+	printf("El factorial de %d es %d\n",numero,factorial(numero));
 
 	return;
 }

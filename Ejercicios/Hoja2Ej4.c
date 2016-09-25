@@ -2,26 +2,26 @@
 #include <stdlib.h>
 
 float BuscarInteres(float capital_inicial, int num_anios);
-float CalculoCapital(float inicial, int interes);
-double Elevar(double base, int exponente);
+float CalculoCapital(float inicial, float interes, int annios);
+float Elevar(float base, int exponente);
 void main(int argc, char* argv[]){
 
 	float capital, interes;
 	int annios;
 	printf("introduce un capital inicial: \n");
-	scanf("%lf",&capital);	
+	scanf("%f",&capital);	
 	
 	do{
 		printf("introduce anios: \n");
 		scanf("%d",&annios);
-		if((annios < 10){
+		if(annios < 10){
 			printf("Error\n");
 		}
 	}while(annios < 10);
 	
 	interes = BuscarInteres(capital, annios);
 	
-	pritnf("El interes minimo debe ser: %lf\n",interes);
+	printf("El interes minimo debe ser: %lf\n",interes);
 
 	return;
 }
@@ -30,7 +30,7 @@ float BuscarInteres(float capital_inicial, int num_anios){
 	float capital_actual = 0;
 	float interes;
 	for(interes=0;(capital_inicial * 2) > capital_actual; interes++){
-		CalculoCapital(capital_inicial,interes,num_anios);		
+		capital_actual = CalculoCapital(capital_inicial,interes,num_anios);		
 	}
 	return interes;
 }

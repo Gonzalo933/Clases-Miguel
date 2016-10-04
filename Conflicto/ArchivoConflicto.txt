@@ -1,1 +1,3 @@
 PC-SOBREMESA
+
+PC-Portatil

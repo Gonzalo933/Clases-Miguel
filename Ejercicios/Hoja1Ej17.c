@@ -15,6 +15,7 @@ void main(int argc, char* argv[]){
 	}while(mes > 12 || mes < 1);
 
 	
+	
 	switch(mes){
 		//Meses con 31 dias
 		case 1:
@@ -47,7 +48,7 @@ void main(int argc, char* argv[]){
 	}while(dia > maximo_Dias_Mes || dia < 1);
 	
 	printf("Fecha leida:\n");
-	printf("%d / %d",dia,mes);
+	printf("%d / %d ",dia,mes);
 
 
 	return;

@@ -4,6 +4,8 @@
 float BuscarInteres(float capital_inicial, int num_anios);
 float CalculoCapital(float inicial, float interes, int annios);
 float Elevar(float base, int exponente);
+
+
 void main(int argc, char* argv[]){
 
 	float capital, interes;
@@ -18,6 +20,14 @@ void main(int argc, char* argv[]){
 			printf("Error\n");
 		}
 	}while(annios < 10);
+
+
+
+
+
+
+
+
 	
 	interes = BuscarInteres(capital, annios);
 	
@@ -29,14 +39,19 @@ void main(int argc, char* argv[]){
 float BuscarInteres(float capital_inicial, int num_anios){
 	float capital_actual = 0;
 	float interes;
+
 	for(interes=0;(capital_inicial * 2) > capital_actual; interes++){
+	
 		capital_actual = CalculoCapital(capital_inicial,interes,num_anios);		
+		printf("%f\n",capital_actual);
 	}
 	return interes;
 }
 
 float CalculoCapital(float inicial, float interes, int annios){
 	float capital_acumulado;
+
+
 	capital_acumulado = inicial * Elevar((1 + interes/100),annios) ;
 	return capital_acumulado;
 }

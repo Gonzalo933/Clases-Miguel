@@ -1,7 +1,1 @@
 PC-SOBREMESA
-<<<<<<< HEAD
-
-PC-Portatil
-=======
-Si
->>>>>>> 6e04720a4e665eacd7522bff8f00cdb8607305d4

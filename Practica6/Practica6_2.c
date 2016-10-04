@@ -19,7 +19,10 @@ void main(int argc, char* argv[]){
 			nueva[i] = cadena[i] - ('a' - 'A');
 		}else if(cadena[i] >= 'A' && cadena[i] <= 'Z'){
 			nueva[i] = cadena[i] + ('a' - 'A');
+		}else{
+			nueva[i] = cadena[i];
 		}	
+
 	}
 	printf("Original: %s\n  Nueva: %s \n",cadena,nueva);
 }

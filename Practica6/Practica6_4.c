@@ -18,6 +18,7 @@ void main(int argc, char* argv[]){
 	
 	printf("Introduce una cadena: \n");
 	fgets(cadena, TAM, stdin);
+	printf("Cadena leida: %s\n",cadena);
 	EliminaVoc(cadena,cadena_final);
 	printf("%s\n",cadena_final);
 	return;

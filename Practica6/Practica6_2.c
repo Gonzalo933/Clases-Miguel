@@ -4,6 +4,7 @@
 
 #define TAM 50
 
+//BUSCAR DOCUMENTACION DE LA FUNCION fgets online y aplicarla al ejercicio.
 void main(int argc, char* argv[]){
 
 	char cadena[TAM];

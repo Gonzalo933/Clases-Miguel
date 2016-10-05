@@ -3,7 +3,7 @@
 
 int factorial(int numero);
 
-void main(int argc, char* argv[]){
+void main(){
 
 	
 	int numero;
@@ -19,6 +19,7 @@ void main(int argc, char* argv[]){
 
 int factorial(int numero){
 	int res;
+
 	if(numero == 1)
 		return 1;
 	

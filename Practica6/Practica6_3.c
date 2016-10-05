@@ -5,7 +5,8 @@
 #define TAM 100
 
 void Leer(double vec[],int n);
-void Mostrar(int array[],int n);
+void Mostrar(double array[],int n);
+
 void main(int argc, char* argv[]){
 	double vector1[TAM];
 	double vector2[TAM];
@@ -30,16 +31,16 @@ void Leer(double vec[],int n){
 	printf("Introduce los valores del vector: \n");
 	for(i=0;i<n;i++){
 		printf("valor %d: \n",i);
-		scanf("",&vec[i]);
+		scanf("%lf",&vec[i]);
 	}
 	return;
 }
 
 	
-void Mostrar(int array[],int n){
+void Mostrar(double array[],int n){
 	int i;
 	for(i=0; i< n; i++){
-		printf("%d ",array[i]);
+		printf("%lf ",array[i]);
 	}
 	printf("\n");
 	return;

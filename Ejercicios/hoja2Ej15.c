@@ -2,6 +2,15 @@
 #include <stdlib.h>
 
 //Declaraciones de funciones, para que puedan estar en cualquier lado
+
+/*
+
+
+gdgfddhdhfhj
+
+*/
+
+
 void DibujarTriangulo(int altura);
 
 void DibujarLinea(int maximo_num);

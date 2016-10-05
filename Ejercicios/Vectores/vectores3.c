@@ -5,6 +5,7 @@
 
 void imprimir_vector(int vector[],int tamano);
 int es_primo(int numero);
+
 int main(void)
 {
 	int vector[TAMVECTOR];
@@ -17,7 +18,7 @@ int main(void)
 	for(i=1; i < TAMVECTOR; i++){ 
 		printf("%d\t%d\n", i, vector[i]);
 	}
-	
+
 	return;
 
 }	

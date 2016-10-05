@@ -6,6 +6,7 @@ void main(int argc, char* argv[]){
 
 	int min,max;
 	int cuadrado;
+	
 	printf("Valor min: \n");
 	scanf("%d",&min);
 
@@ -17,7 +18,7 @@ void main(int argc, char* argv[]){
 
 	while(min <= max){
 		cuadrado = min * min;
-		printf("%d          %d\n",min,cuadrado);
+		printf("%d\t%d\n",min,cuadrado);
 		min ++;
 	}
 

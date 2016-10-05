@@ -15,6 +15,7 @@ void main(int argc, char* argv[]){
 	}while(numero < 0);
 	
 	printf("Valor inicial: %d\n",numero);
+	
 	for(num_iteraciones = 0; numero > 1; num_iteraciones ++){
 		//Si el numero es par....
 		if(numero % 2 == 0){

@@ -39,6 +39,7 @@ void EliminaVoc(char cad_ini[], char cad_fin[]){
 		}	
 		//Seria mucho mejor con la condicion negada para que no haya else... pero a lo mejor es mas lio
 	}
+	cad_fin[k] = '\0';
 	return;
 }
 void EliminaVoc2(char cad_ini_fin[]){

@@ -11,6 +11,16 @@
 
 void EliminaVoc(char cad_ini[], char cad_fin[]);
 void EliminaVoc2(char cad_ini_fin[]);
+
+
+/* EJERCICIO: 
+	Acabar esta funcion
+	*/
+
+int es_vocal(char letra);
+
+
+
 void main(int argc, char* argv[]){
 	char cadena[TAM];
 	char cadena_final[TAM];
@@ -30,9 +40,10 @@ void EliminaVoc(char cad_ini[], char cad_fin[]){
 	int k;
 	
 	tamano_cadena=strlen(cad_ini);	
-	for(i=0,k=0;i<tamano_cadena;i++){
-		if(cad_ini[i] >= 'a' && cad_ini[i] <= 'z' || cad_ini[i] >= 'A' && cad_ini[i] <= 'Z'){ //En caso de que sea vocal no hacer nada
-		
+	for(i=0,k=0;i<tamano_cadena;i++){		
+		if(cad_ini[i] == 'a' || cad_ini[i] == 'e' || cad_ini[i] == 'i' || cad_ini[i] == 'o' || cad_ini[i] == 'u'
+		    || cad_ini[i] == 'A' || cad_ini[i] == 'E' || cad_ini[i] == 'I' || cad_ini[i] == 'O' || cad_ini[i] == 'U'){ 
+		//En caso de que sea vocal no hacer nada
 		}else{
 			cad_fin[k] = cad_ini[i];
 			k++;
@@ -49,13 +60,25 @@ void EliminaVoc2(char cad_ini_fin[]){
 	
 	tamano_cadena=strlen(cad_ini_fin);	
 	for(i=0,k=0;i<tamano_cadena;i++){
-		if(cad_ini_fin[i] >= 'a' && cad_ini_fin[i] <= 'z' || cad_ini_fin[i] >= 'A' && cad_ini_fin[i] <= 'Z'){ //En caso de que sea vocal no hacer nada
-		
-		}else{
-			cad_ini_fin[k] = cad_ini_fin[i];
-			k++;
-		}	
-		//Seria mucho mejor con la condicion negada para que no haya else... pero a lo mejor es mas lio
+		switch(cad_ini_fin[i]){
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+			case 'A':
+			case 'E':
+			case 'I':
+			case 'O':
+			case 'U':
+
+			break;
+			default:
+				cad_ini_fin[k] = cad_ini_fin[i];
+			break;
+
+		}
 	}
+	cad_ini_fin[k] = '\0';
 	return;
 }

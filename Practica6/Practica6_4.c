@@ -17,7 +17,7 @@ void EliminaVoc2(char cad_ini_fin[]);
 	Acabar esta funcion
 	*/
 
-int es_vocal(char letra);
+int cuantas_vocales(char cadena[]);
 
 
 
@@ -28,9 +28,15 @@ void main(int argc, char* argv[]){
 	
 	printf("Introduce una cadena: \n");
 	fgets(cadena, TAM, stdin);
+
 	printf("Cadena leida: %s\n",cadena);
+	printf("Cadena sin vocales, llamando a EliminaVoc1: \n");
 	EliminaVoc(cadena,cadena_final);
 	printf("%s\n",cadena_final);
+
+	printf("Cadena sin vocales, llamando a EliminaVoc2.\n");
+	EliminaVoc2(cadena);
+	printf("%s\n",cadena);
 	return;
 }
 
@@ -44,6 +50,9 @@ void EliminaVoc(char cad_ini[], char cad_fin[]){
 		if(cad_ini[i] == 'a' || cad_ini[i] == 'e' || cad_ini[i] == 'i' || cad_ini[i] == 'o' || cad_ini[i] == 'u'
 		    || cad_ini[i] == 'A' || cad_ini[i] == 'E' || cad_ini[i] == 'I' || cad_ini[i] == 'O' || cad_ini[i] == 'U'){ 
 		//En caso de que sea vocal no hacer nada
+
+
+
 		}else{
 			cad_fin[k] = cad_ini[i];
 			k++;
@@ -54,7 +63,7 @@ void EliminaVoc(char cad_ini[], char cad_fin[]){
 	return;
 }
 void EliminaVoc2(char cad_ini_fin[]){
-	size_t tamano_cadena;
+	int tamano_cadena;
 	int i;
 	int k;
 	
@@ -73,8 +82,11 @@ void EliminaVoc2(char cad_ini_fin[]){
 			case 'U':
 
 			break;
+
+
 			default:
 				cad_ini_fin[k] = cad_ini_fin[i];
+				k++;
 			break;
 
 		}

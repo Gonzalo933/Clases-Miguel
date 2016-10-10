@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 int primo(int n);
 
 void main(int argc, char* argv[]){
@@ -14,6 +15,7 @@ void main(int argc, char* argv[]){
 	time_t t;
 
 	srand(time(NULL));
+
 	do{
 		printf("Introduce un numero.\n");
 		scanf("%d",&numero);
@@ -46,7 +48,7 @@ int primo(int n){
 	int i;
 	int es_primo = 1;
 	if(n == 0) return 0;
-	for(i=2;i<n && es_primo == 1;i++){
+	for(i=2;i < n && es_primo == 1;i++){
 		if(n % i == 0){
 			es_primo = 0;
 		}		

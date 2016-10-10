@@ -11,7 +11,9 @@ void main(int argc, char* argv[]){
 	char nueva[TAM];
 	int i;
 	
+	printf("Introduce una cadena.\n");
 	gets(cadena);
+	//fgets(cadena,TAM,stdin);
 	
 	for(i = 0 ; i < TAM ; i++){
 		if(cadena[i] >= '0' && cadena[i] <= '9'){

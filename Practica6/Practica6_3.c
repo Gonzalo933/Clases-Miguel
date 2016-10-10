@@ -11,10 +11,14 @@ void Multiplicar(double vec[],double escalar,int n);
 void SumarVectores(double vec1[], double vec2[], double vec_suma[], int n);
 
 void main(int argc, char* argv[]){
+
 	double vector1[TAM];
 	double vector2[TAM];
 	double vector_suma[TAM];
+
+
 	int tamano;
+
 	double resultadoEscalar,x;
 	
 	do{
@@ -32,6 +36,8 @@ void main(int argc, char* argv[]){
 	resultadoEscalar=ProductoEscalar(vector1,vector2,tamano);
 	
 	printf("Producto Escalar: %lf\n",resultadoEscalar);
+	
+
 	printf("Valor de X: \n");
 	scanf("%lf",&x);
 	
@@ -39,7 +45,7 @@ void main(int argc, char* argv[]){
 	printf("Multiplicacion:\n");
 	Mostrar(vector1,tamano);
 	
-	SumarVectores(vector1, vector1, vector_suma, tamano);
+	SumarVectores(vector1, vector2, vector_suma, tamano);
 	printf("Suma:\n");
 	Mostrar(vector_suma,tamano);
 	
@@ -70,7 +76,7 @@ double ProductoEscalar(double vec1[],double vec2[],int n){
 	double pe=0;
 	
 	for(i=0;i<n;i++){
-		pe= pe + vec1[i] * vec2[i] ;
+		pe = pe + vec1[i] * vec2[i] ;
 	}
 	return pe;
 }

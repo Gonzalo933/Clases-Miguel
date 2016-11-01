@@ -14,7 +14,7 @@ void main(int argc, char* argv[]){
 	int vec_primos[100];
 	time_t t;
 
-	srand(time(NULL));
+	srand((unsigned int) time(NULL));
 
 	do{
 		printf("Introduce un numero.\n");

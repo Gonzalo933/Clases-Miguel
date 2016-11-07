@@ -5,6 +5,8 @@
 
 #define M 3
 
+void ProdMat(int matriz1[][M],int matriz2[][M],int resultado[][M]);
+
 void main(int argc, char* argv[]){
 
 	int matriz1[M][M];
@@ -28,12 +30,12 @@ void main(int argc, char* argv[]){
 		}
 	}
 	//Llamada funcion
-	ProdMat(matriz1,matriz2,int **resultado);
+	ProdMat(matriz1,matriz2,resultado);
 	printf("Matriz Producto:\n");
 	for(i=0;i<M;i++){
 		printf("\n");
 		for(j=0;j<M;j++){
-			printf("%d  ",resultado[i][j]);			
+			printf("%d\t",resultado[i][j]);			
 		}
 	}
 	

@@ -8,7 +8,7 @@ void BuscarValores(float vec[M], float * max, float *min, float * medio);
 
 void main(int argc, char* argv[]){
 
-	int max,min,medio;
+	float max,min,medio;
 	float vec[M];
 
 	printf("Introduce Valores: \n");

@@ -10,7 +10,7 @@ void main(int argc, char* argv[]){
 
 	float max,min,medio;
 	float vec[M];
-
+	int i;
 	printf("Introduce Valores: \n");
 	for(i=0; i < M ; i++){	
 		scanf("%f",&vec[i]);

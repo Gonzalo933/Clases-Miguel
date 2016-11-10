@@ -4,44 +4,37 @@
 
 #define M 10
 
-void BuscarValores(float vec[M], float * max, float *min, float * medio);
-
+int numero_repeticiones_palabra(char frase[], char palabra[]);
 void main(int argc, char* argv[]){
 
-	float max,min,medio;
-	float vec[M];
-	int i;
-	printf("Introduce Valores: \n");
-	for(i=0; i < M ; i++){	
-		scanf("%f",&vec[i]);
-	}
-
-	BuscarValores(vec, &max, &min,&medio);
-
-	printf("Minimo: %f, Maximo: %f , Media : %f\n",min,max,medio);
-
+	/*El main no lo piden en el enuciado, pero he hecho uno de prueba
+	*/
+	char frase[]="la casala de la hermlaana de la cuñada de mi primo la";
+	char palabra[]="la";
+	
+	printf("La palabra LA, se repite: %d veces",numero_repeticiones_palabra(frase,palabra));
+	
 }
 
-void BuscarValores(float vec[M], float * max, float *min, float * medio){
-
-	int i;	
-	*max = vec[0];
-	*min = vec[0];
-	*medio = 0;
-	float suma = 0;
-	
-	for(i=0; i < M ; i++){	
-		if(vec[i] > *max){
-			*max = vec[i];
-		}
-		if(vec[i] < * min){
-			*min = vec[i];
-		}
-		suma = suma + vec[i];		
+int numero_repeticiones_palabra(char frase[], char palabra[]){
+	int num_veces =0;
+	int i,k;
+	int longitud_frase = strlen(frase);
+	int longitud_palabra = strlen(palabra);
+	for(i=0; i < longitud_frase; i++){
+		k=0;
+		if(frase[i] == palabra[k]){ //Si la letra de la frase coincide con la primera d ela palabra, empezamos a contar e ir avanzando letras a ver si coinciden.
+			while(frase[i] == palabra[k]){
+				k++;
+				i++;
+			}
+			if(k == longitud_palabra && (frase[i] == ' ' || frase[i] == '\0')){
+				num_veces ++;
+			}
+		}	
 	}
-	
-	*medio = suma/M;
-	
+ 
+    return num_veces;
 }
 
 

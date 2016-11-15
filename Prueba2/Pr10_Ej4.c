@@ -14,19 +14,20 @@ typedef struct{
 }T_PLAN;
 
 void Leer2(T_PLAN* pplaneta);
-void Mostrar(T_PLAN *planeta);
+void Mostrar(T_PLAN planeta);
 void LeerPlanetas2(T_PLAN* planetas,int n);
 int BuscaNombre(T_PLAN v[],int n,char nom[]);
 void BuscarCercano(T_PLAN v[],int n,T_PLAN *p_cercano);
 
 int main(void){
 	T_PLAN *planetas;
+	
 	int tam;
 	char nombre_planeta[M];
 	int posicion_planeta;
 	
 	T_PLAN *planeta_mas_cercano;
-	
+
 	
 	printf("\nIntroduce el numero de planetas: ");	
 	scanf("%d",&tam);	
@@ -39,15 +40,12 @@ int main(void){
 	if(posicion_planeta==-1){
 		printf("\nERROR, planeta no encontrado");
 	}else{
-		Mostrar(&(planetas[posicion_planeta]));
+		Mostrar((planetas[posicion_planeta]));
 	}
+	
 	//planeta_mas_cercano = (T_PLAN *) calloc(1,sizeof(T_PLAN));
-	BuscarCercano(planetas,tam,planeta_mas_cercano);	
-	printf("\n\nEl planeta mas cercano es :");
-	printf("\nPrueba: %s \n", planeta_mas_cercano->nombre);
-	printf("\nPrueba: %s \n", (*planeta_mas_cercano).nombre);
-	printf("\nPrueba: %s \n", planetas[0].nombre);
-	Mostrar(planeta_mas_cercano);
+	BuscarCercano(planetas,tam,planeta_mas_cercano);		
+	Mostrar(planeta_mas_cercano[0]);
 	free (planetas);
 	return 0;
 }
@@ -71,15 +69,15 @@ void LeerPlanetas2(T_PLAN* planetas,int n){
 	return;
 }
 
-void Mostrar(T_PLAN *planeta){
+void Mostrar(T_PLAN planeta){
 	int l;
-	l=strlen(planeta->nombre);
-	if(planeta->nombre[l-1]=='\n'){
-		planeta->nombre[l-1]='\0';
+	l=strlen(planeta.nombre);
+	if(planeta.nombre[l-1]=='\n'){
+		planeta.nombre[l-1]='\0';
 	}	
-	printf("\nEl nombre del planeta es: %s",planeta->nombre);	
-	printf("\nSu radio es %f",planeta->dato.radio);
-	printf("\nSu distancia al sol es %f",planeta->dato.distancia);
+	printf("\nEl nombre del planeta es: %s",planeta.nombre);	
+	printf("\nSu radio es %f",planeta.dato.radio);
+	printf("\nSu distancia al sol es %f",planeta.dato.distancia);
 	return;
 }
 int BuscaNombre(T_PLAN v[],int n,char nom[]){
@@ -94,16 +92,18 @@ int BuscaNombre(T_PLAN v[],int n,char nom[]){
 void BuscarCercano(T_PLAN v[],int n,T_PLAN *p_cercano){
 	int i;
 	double dist_minima;
-	dist_minima=v[0]->dato.distancia;//distancia  minima inicial y apartir de ella comparar las siguientes
-	p_cercano=(v[0]);
+	dist_minima=v[0].dato.distancia;//distancia  minima inicial y apartir de ella comparar las siguientes
+	p_cercano=&(v[0]);
 	//printf("\nEl nombre del planeta es: %s\n",v[0].nombre);
 	//printf("\nEl nombre del planeta es: %s\n",p_cercano->nombre);
 	for(i=0;i<n;i++){
-		if(v[i]->dato.distancia < dist_minima){
-			dist_minima=v[i]->dato.distancia;
-			p_cercano=(v[i]);//apunte al planeta de menor distancoia al Sol			
+		if(v[i].dato.distancia < dist_minima){
+			dist_minima=v[i].dato.distancia;
+			p_cercano=&(v[i]);//apunte al planeta de menor distancoia al Sol			
 		}
 	}
-	printf("\nPrueba: %s \n", p_cercano->nombre);	
+	/*printf("\nPrueba: %s \n", p_cercano->nombre);	
+	printf("\nPrueba: %p \n", p_cercano);
+	printf("\nPrueba: %p \n", &(v[0]));*/
 	return;	
 }

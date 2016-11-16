@@ -6,10 +6,10 @@
 #define COL 2
 
 void Rellenar_mat(int matriz[][COL], int num);
-void Mostrar(int matriz[][COL], int num);
+void Mostrar(int matriz[M][COL], int num);
 void Reordenar(int matriz[][COL],int num);
 void AltaCalidad(int matriz[][COL], int num,float *media, float *num_por_encima);
-void Rellenar_AltaCalidad(int matriz[][COL], int num,float media,int vehiculos_alta_c[][COL]);
+void Rellenar_AltaCalidad(int matriz[][COL], int num,float media,int *bastidores_calidad,int *calidad_alta);
 
 
 // http://stackoverflow.com/questions/13554244/how-to-use-pointer-expressions-to-access-elements-of-a-two-dimensional-array-in
@@ -18,7 +18,8 @@ void main(int argc, char* argv[]){
 	int matriz[M][COL]; //Una fila por vehiculo, una columna para la nota y otra para el num bastidor
 	int num_vehiculos;
 	
-	int vehiculos_alta_calidad[][COL];
+	int *bastidores_calidad;
+	int *calidad_alta;
 	
 	float media;
 	float num_por_encima;
@@ -32,16 +33,19 @@ void main(int argc, char* argv[]){
 	Mostrar(matriz,num_vehiculos);
 	
 	AltaCalidad(matriz,num_vehiculos,&media, &num_por_encima);
-	vehiculos_alta_calidad = (int **)calloc(num_por_encima, sizeof(int *));
+	bastidores_calidad = (int *)calloc(num_por_encima, sizeof(int));
+	calidad_alta = (int *)calloc(num_por_encima, sizeof(int));
 	//Comprobar == NULL
-	Rellenar_AltaCalidad(matriz,num_vehiculos,media,vehiculos_alta_calidad);
-	printf("Vehiculos alta calidad.\n");
-	Mostrar(vehiculos_alta_calidad, num_por_encima);
+	Rellenar_AltaCalidad(matriz,num_vehiculos,media,bastidores_calidad,calidad_alta);
 	
+	printf("\nVehiculos alta calidad.\n");	
 	for(i=0;i<num_por_encima;i++){
-		free(vehiculos_alta_calidad[i]);
+		printf("Vehiculo %d:\n",i+1);
+		printf("\tCalidad: %d\n",calidad_alta[i]);
+		printf("\tBastidor: %d",bastidores_calidad[i]);
 	}	
-	free(vehiculos_alta_calidad);
+	free(bastidores_calidad);
+	free(calidad_alta);
 }
 
 
@@ -58,17 +62,17 @@ void Rellenar_mat(int matriz[][COL], int num){
 }
 
 void Reordenar(int matriz[][COL],int num){
-	int i,k;
+	/*int i,k;
 	int *puntero;
 	for(i=0, k= num-1; i != k ; i++, k--){
 		puntero = matriz[i];			
 		(matriz[i]) = (matriz[k]);
 		(matriz[k]) = puntero;
 	}
-	return;
+	return;*/
 }
 
-void Mostrar(int matriz[][COL], int num){
+void Mostrar(int matriz[M][COL], int num){
 	int i;
 	printf("Matriz:\nCalidad\tBastidor\n");
 	for(i=0; i< num ; i++){
@@ -92,12 +96,13 @@ void AltaCalidad(int matriz[][COL], int num,float *media, float *num_por_encima)
 	return;	
 }
 
-void Rellenar_AltaCalidad(int matriz[][COL], int num,float media,int vehiculos_alta_c[][COL]){
+void Rellenar_AltaCalidad(int matriz[][COL], int num,float media,int *bastidores_calidad,int *calidad_alta){
 	int i;
 	int k = 0;
 	for(i=0; i < num ; i++){
 		if(matriz[i][0] > media){
-			vehiculos_alta_c[k] = matriz[i];
+			calidad_alta[k] = matriz[i][0];
+			bastidores_calidad[k] = matriz[i][1];
 			k++;
 		}
 	}	

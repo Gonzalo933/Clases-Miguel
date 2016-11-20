@@ -22,6 +22,7 @@ void main(int argc, char* argv[]){
 	int *calidad_alta;
 	
 	float media;
+	//numero de coches por encima de la media
 	float num_por_encima;
 	
 	int i;
@@ -35,14 +36,21 @@ void main(int argc, char* argv[]){
 	AltaCalidad(matriz,num_vehiculos,&media, &num_por_encima);
 	bastidores_calidad = (int *)calloc(num_por_encima, sizeof(int));
 	calidad_alta = (int *)calloc(num_por_encima, sizeof(int));
-	//Comprobar == NULL
+	if(bastidores_calidad == NULL){
+		printf("Error, no hay memoria suficiente.\n");
+		return;
+	}
+	if(calidad_alta == NULL){
+		printf("Error, no hay memoria\n");
+		return;
+	}
 	Rellenar_AltaCalidad(matriz,num_vehiculos,media,bastidores_calidad,calidad_alta);
 	
 	printf("\nVehiculos alta calidad.\n");	
 	for(i=0;i<num_por_encima;i++){
 		printf("Vehiculo %d:\n",i+1);
 		printf("\tCalidad: %d\n",calidad_alta[i]);
-		printf("\tBastidor: %d",bastidores_calidad[i]);
+		printf("\tBastidor: %d\n",bastidores_calidad[i]);
 	}	
 	free(bastidores_calidad);
 	free(calidad_alta);
@@ -51,6 +59,7 @@ void main(int argc, char* argv[]){
 
 void Rellenar_mat(int matriz[][COL], int num){
 	int i;
+	//num = numero de vehiculos
 	printf("Se deben introducir los vehiculos con el numero de bastidor en orden decreciente.\n");
 	for(i=0; i< num ; i++){
 		printf("Calidad del vehiculo %d ?:\n",i+1);

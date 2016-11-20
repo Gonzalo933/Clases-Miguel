@@ -42,6 +42,7 @@ int main(void){
 	}else{
 		Mostrar((planetas[posicion_planeta]));
 	}	
+
 	BuscarCercano(planetas,tam,&planeta_mas_cercano);	
 	printf("\nPlaneta mas cercano:\n");
 	Mostrar(*planeta_mas_cercano);
